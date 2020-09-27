@@ -1,16 +1,11 @@
 import axios from 'axios';
 
 export default {
-    namespaced: true,
+    namespaced: true, //actions、mutations、getters 改成 ture 區域變數，state 本來就是區域變數
     state: {
-      count: 0,
       img: ''
     },
     actions: {
-        getCount(context, payload) {
-            // payload 外部傳來
-            context.commit('COUNT', payload)
-        },
         getRandomuser(context) {
             axios.get('https://randomuser.me/api/').then((res) => {
                 context.commit('IMG', res.data.results[0].picture.large)
@@ -18,17 +13,11 @@ export default {
         }
     },
     mutations: {
-        // 操作state
-        COUNT(state, payload) {
-            // state = state{}
-            state.count += payload
-        },
         IMG(state, payload) {
             state.img = payload
         }
     },
     getters: {
-        isCount: state => state.count,
         isImg: state => state.img
     }
   }

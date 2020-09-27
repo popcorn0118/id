@@ -26,10 +26,14 @@ export default {
     }
   },
   methods: {
-    ...mapActions('homeM', [
-      'getRandomuser',
+    // 全域
+    ...mapActions([
       'getCount'
     ]),
+    // 區域: homeM
+    ...mapActions(
+      'homeM', [ 'getRandomuser' ]
+    ),
     fetchAdd() {
       // 沒有用vuex的話就要用:dispatch操作staoee裡的actions
       // this.$store.dispatch('getCount', 1)
@@ -40,10 +44,14 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('homeM', [
-      'isCount',
-      'isImg'
-    ])
+    // 全域
+    ...mapGetters([
+      'isCount'
+    ]),
+    // 區域: homeM
+    ...mapGetters(
+      'homeM', [ 'isImg' ]
+    )
   }
 }
 </script>
