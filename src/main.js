@@ -28,3 +28,13 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth) {
+    next({ path: '/login' })
+    alert('需要驗證')
+    //打驗證API
+  } else {
+    next()
+  } 
+})

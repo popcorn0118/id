@@ -4,5 +4,5 @@ const prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
-  HTTP_PATH: '"http://localhost:8080"'
+  HTTP_PATH: '"http://localhost:8080"' // 伺服器環境
 })
