@@ -18,6 +18,8 @@ Vue.use(ElementUI)
 Vue.use(Mint)
 Vue.config.productionTip = false
 
+axios.defaults.withCredentials = true; // 跨域存取需打開
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
