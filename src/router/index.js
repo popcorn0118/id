@@ -22,7 +22,7 @@ export default new Router({
       name: 'Home',
       component: Home,
       meta: {
-        requiresAuth: true //需要驗證(用在登入)
+        // requiresAuth: true //需要驗證(用在登入)
       }
     }
   ]

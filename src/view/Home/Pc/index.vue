@@ -1,23 +1,27 @@
 <template>
   <div>
-    {{http}} {{'Pc'}}
-    <el-switch
-      v-model="value"
-      active-color="#13ce66"
-      inactive-color="#ff4949">
-    </el-switch>
+    <Control />
+    <Table />
+    <DialogAdd />
   </div>
 </template>
 <style scoped>
 </style>
 <script>
+import Control from './Control'
+import Table from './Table'
+import DialogAdd from './DialogAdd'
 export default {
   name: 'Home_Pc',
+  components: {
+    Control,
+    Table,
+    DialogAdd
+  },
   data () {
     return {
-      msg: process.env.NODE_ENV,
-      http: process.env.HTTP_PATH,
-      value: true
+      value: true,
+      dialogVisible: false
     }
   }
 }

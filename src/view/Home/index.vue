@@ -1,9 +1,6 @@
 <template>
 <div>
   <components :is="compRWD" />
-  <el-button @click="fetchAdd">{{'加加:'}}{{isCount}}</el-button>
-  <el-button @click="fetchImg">{{'取得隨機圖片'}}</el-button>
-  <img :src="isImg" alt="">
 </div>
 </template>
 
@@ -22,7 +19,7 @@ export default {
       msg: process.env.NODE_ENV,
       http: process.env.HTTP_PATH,
       value: true,
-      compRWD: 'Mobile'
+      compRWD: 'Pc'
     }
   },
   methods: {
